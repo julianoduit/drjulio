@@ -45,11 +45,12 @@
         --teal: #006661;
         --teal-light: #00958e;
         --teal-glow: rgba(0, 149, 142, 0.18);
-        --dark: #09090a;
+        --dark: #111214;
         --dark-2: #111214;
         --dark-3: #181a1c;
         --dark-4: #222528;
         --border: rgba(0, 150, 142, 0.18);
+        --border-dark: #053637;
         --text: rgba(255, 255, 255, 0.82);
         --text-muted: rgba(255, 255, 255, 0.46);
         --white: #ffffff;
@@ -78,7 +79,7 @@
       }
 
       img {
-        max-width: 100%;
+        /* max-width: 100%; */
         display: block;
       }
 
@@ -89,7 +90,7 @@
 
       /* ── UTILITIES ─────────────────────────────────────────────── */
       .container {
-        max-width: 1300px;
+        max-width: 1355px;
         margin: 0 auto;
         padding: 0 5vw;
       }
@@ -106,8 +107,9 @@
       .section-dark-image {
         padding: 110px 0;
         background-repeat: no-repeat;
-        background-size: cover;
-        background-image: url("drjulio2.png");
+        background-size: contain;
+        background-position: center right;
+        background-image: url("fundo-sobre.png");
       }
 
       .section-title {
@@ -158,8 +160,10 @@
         align-items: center;
         position: relative;
         overflow: hidden;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.07'/%3E%3C/svg%3E");
-        background-size: 200px 200px;
+        background-image: url("fundo-hero.png");
+        background-size: contain;
+        background-position: center right;
+        background-repeat: no-repeat;
       }
 
       /* Decoração de fundo */
@@ -196,10 +200,7 @@
       }
 
       .hero-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 5vw;
-        align-items: center;
+        max-width: 56%;
       }
 
       .hero-h1 {
@@ -241,18 +242,6 @@
         justify-content: start;
       }
 
-      /* Visual lado direito */
-      .hero-visual {
-        position: relative;
-      }
-
-      .hero-card-main {
-        background: var(--dark-3);
-        padding: 0;
-        overflow: hidden;
-        position: relative;
-      }
-
       .hero-img {
         width: 100%;
         aspect-ratio: 3/4;
@@ -274,22 +263,6 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
-      }
-
-      /* Linha decorativa vertical */
-      .hero-line {
-        position: absolute;
-        top: 20%;
-        right: -40px;
-        width: 1px;
-        height: 60%;
-        background: linear-gradient(
-          to bottom,
-          transparent,
-          var(--teal-light),
-          transparent
-        );
-        opacity: 0.3;
       }
 
       /* ── SOBRE ──────────────────────────────────────────────────── */
@@ -316,20 +289,6 @@
         object-fit: cover;
         display: block;
         filter: brightness(0.8) saturate(0.85);
-      }
-
-      .sobre-img-placeholder {
-        width: 100%;
-        aspect-ratio: 4/4;
-        background: linear-gradient(
-          160deg,
-          var(--dark-3),
-          rgba(0, 102, 97, 0.15)
-        );
-        border: 1px solid var(--border);
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
 
       /* Barra decorativa */
@@ -373,15 +332,15 @@
         align-items: flex-start;
         gap: 10px;
         padding: 14px 16px;
-        background: var(--dark-3);
-        border: 1px solid var(--border);
+        background: #111214;
+        border: 2px solid var(--border-dark);
       }
 
       .dif-icon {
         width: 32px;
         height: 32px;
-        background: rgba(0, 149, 142, 0.12);
-        border: 1px solid var(--border);
+        background: rgba(5, 54, 55, 0.1);
+        border: 2px solid var(--border-dark);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -413,16 +372,11 @@
       .servicos-layout {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background: var(--border);
-        border: 1px solid var(--border);
-        gap: 1.5px;
       }
 
       .servicos-cards {
         display: flex;
         flex-direction: column;
-        background: var(--border);
-        gap: 1.5px;
       }
 
       .servicos-video-col {
@@ -437,15 +391,17 @@
         height: 100%;
         object-fit: cover;
         display: block;
+        border: 2px solid #053637;
       }
 
       .servico-card {
-        background: var(--dark-2);
+        background: rgba(5, 54, 55, 0.18);
         padding: 2.5rem 2rem;
         position: relative;
         overflow: hidden;
         transition: background 0.3s;
         cursor: default;
+        border: 2px solid #053637;
       }
 
       .servico-card::before {
@@ -462,7 +418,7 @@
       }
 
       .servico-card:hover {
-        background: var(--dark-3);
+        background: rgba(5, 54, 55, 0.32);
       }
 
       .servico-card:hover::before {
@@ -473,7 +429,7 @@
       .servico-num {
         font-size: 5rem;
         font-weight: 700;
-        color: rgba(0, 149, 142, 0.06);
+        color: rgba(5, 54, 55, 0.3);
         line-height: 1;
         position: absolute;
         top: 16px;
@@ -485,8 +441,8 @@
       .servico-icon {
         width: 52px;
         height: 52px;
-        background: rgba(0, 102, 97, 0.2);
-        border: 1px solid var(--border);
+        background: #053637;
+        border: 1px solid var(--teal-light);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -495,11 +451,11 @@
       }
 
       .servico-card:hover .servico-icon {
-        background: rgba(0, 149, 142, 0.2);
+        background: rgba(0, 102, 97, 0.5);
       }
 
       .servico-icon img {
-        width: 50%;
+        width: 75px;
         height: auto;
       }
 
@@ -525,23 +481,96 @@
         margin-bottom: 3.5rem;
       }
 
-      .depo-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--border);
-        border: 1px solid var(--border);
+      .depo-carousel-wrap {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .depo-carousel-wrap::before,
+      .depo-carousel-wrap::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 120px;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      .depo-carousel-wrap::before {
+        left: 0;
+        background: linear-gradient(to right, #111214, transparent);
+      }
+
+      .depo-carousel-wrap::after {
+        right: 0;
+        background: linear-gradient(to left, #111214, transparent);
+      }
+
+      .depo-track-row {
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+
+      .depo-track {
+        display: flex;
+        width: max-content;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        will-change: transform;
+      }
+
+      .depo-track-row:nth-child(1) .depo-track {
+        animation-name: scrollRight;
+        animation-duration: 45s;
+      }
+
+      .depo-track-row:nth-child(2) .depo-track {
+        animation-name: scrollLeft;
+        animation-duration: 50s;
+      }
+
+      .depo-track-row:nth-child(1):hover .depo-track {
+        animation-play-state: paused;
+      }
+
+      .depo-track-row:nth-child(2):hover .depo-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes scrollRight {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes scrollLeft {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
       }
 
       .depo-card {
-        background: var(--dark);
+        background: rgba(5, 54, 55, 0.1);
         padding: 2.2rem;
         position: relative;
         transition: background 0.25s;
+        border: 2px solid #053637;
+        width: 340px;
+        flex-shrink: 0;
+        margin-right: 16px;
+        height: 340px;
+        overflow: hidden;
       }
 
       .depo-card:hover {
-        background: var(--dark-3);
+        background: rgba(5, 54, 55, 0.3);
       }
 
       .depo-stars {
@@ -558,8 +587,7 @@
       .depo-quote-icon {
         font-size: 3rem;
         font-weight: 700;
-        color: var(--teal-light);
-        opacity: 0.25;
+        color: rgba(0, 149, 142, 0.3);
         line-height: 1;
         position: absolute;
         top: 16px;
@@ -573,6 +601,10 @@
         line-height: 1.8;
         margin-bottom: 1.5rem;
         font-style: italic;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .depo-author {
@@ -603,23 +635,10 @@
         color: var(--white);
       }
 
-      .depo-info {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        margin-top: 1px;
-      }
-
       /* ── FAQ ────────────────────────────────────────────────────── */
 
-      .faq-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr;
-        gap: 7vw;
-        align-items: start;
-      }
-
       .faq-left h2 {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
       }
 
       .faq-left p {
@@ -627,30 +646,6 @@
         color: var(--text-muted);
         line-height: 1.75;
         margin-bottom: 2rem;
-      }
-
-      .faq-cta-box {
-        background: linear-gradient(
-          135deg,
-          rgba(0, 102, 97, 0.2),
-          rgba(0, 149, 142, 0.08)
-        );
-        border: 1px solid var(--border);
-        padding: 2rem;
-      }
-
-      .faq-cta-box h4 {
-        font-size: 1rem;
-        font-weight: 600;
-        color: var(--white);
-        margin-bottom: 0.5rem;
-      }
-
-      .faq-cta-box p {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        line-height: 1.65;
-        margin-bottom: 1.25rem;
       }
 
       .faq-list {
@@ -729,115 +724,6 @@
         align-items: start;
       }
 
-      .form-wrap h2 {
-        margin-bottom: 1.5rem;
-      }
-
-      .form-wrap > p {
-        font-size: 0.92rem;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-        line-height: 1.7;
-      }
-
-      .form-card {
-        background: var(--dark-3);
-        border: 1px solid var(--border);
-        padding: 2.5rem;
-        position: relative;
-      }
-
-      .form-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(to right, var(--teal), var(--teal-light));
-      }
-
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-      }
-
-      .form-group {
-        margin-bottom: 1.1rem;
-      }
-
-      .form-group label {
-        display: block;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--teal-light);
-        margin-bottom: 0.5rem;
-      }
-
-      .form-group input {
-        width: 100%;
-        padding: 12px 14px;
-        background: var(--dark-4);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: var(--white);
-        font-family: var(--font);
-        font-size: 0.92rem;
-        outline: none;
-        transition:
-          border-color 0.2s,
-          box-shadow 0.2s;
-        appearance: none;
-      }
-
-      .form-group input:focus {
-        border-color: var(--teal-light);
-        box-shadow: 0 0 0 3px rgba(0, 149, 142, 0.12);
-      }
-
-      .form-group input::placeholder {
-        color: rgba(255, 255, 255, 0.25);
-      }
-
-      .form-card .btn {
-        width: 100%;
-        justify-content: center;
-        margin-top: 0.5rem;
-        padding: 16px;
-      }
-
-      .form-success {
-        display: none;
-        text-align: center;
-        padding: 3rem 1rem;
-      }
-
-      .form-success .check-wrap {
-        width: 64px;
-        height: 64px;
-        background: rgba(0, 149, 142, 0.15);
-        border: 1px solid var(--border);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.25rem;
-        font-size: 1.6rem;
-      }
-
-      .form-success h3 {
-        font-size: 1.4rem;
-        color: var(--white);
-        margin-bottom: 0.5rem;
-      }
-
-      .form-success p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-      }
-
       /* Info + Mapa */
       .contato-info h2 {
         margin-bottom: 1.5rem;
@@ -848,6 +734,28 @@
         flex-direction: column;
         gap: 12px;
         margin-bottom: 2rem;
+      }
+
+      .faq-left .info-items {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 2rem;
+      }
+
+      .faq-left .info-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 18px 20px;
+        background: var(--dark-3);
+        border: 1px solid var(--border);
+        transition: border-color 0.2s;
+        text-decoration: none;
+      }
+
+      .faq-left .info-item:hover {
+        border-color: var(--teal-light);
       }
 
       .info-item {
@@ -901,10 +809,11 @@
       .mapa-wrap {
         width: 100%;
         aspect-ratio: 16/6;
-        background: var(--dark-3);
-        border: 1px solid var(--border);
         overflow: hidden;
         position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5vw;
       }
 
       .mapa-wrap iframe {
@@ -1078,13 +987,8 @@
         }
 
         .hero-grid,
-        .faq-grid,
         .contato-grid {
           grid-template-columns: 1fr;
-        }
-
-        .hero-visual {
-          display: none;
         }
 
         .hero-left .hero-actions {
@@ -1099,12 +1003,8 @@
           min-height: 300px;
         }
 
-        .depo-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .form-row {
-          grid-template-columns: 1fr;
+        .depo-card {
+          width: 280px;
         }
 
         .servicos-header {
@@ -1175,18 +1075,6 @@
           padding: 1.5rem;
         }
 
-        .faq-grid {
-          gap: 2.5rem;
-        }
-
-        .faq-cta-box {
-          padding: 1.25rem;
-        }
-
-        .form-card {
-          padding: 1.5rem 1.25rem;
-        }
-
         .contato-grid {
           gap: 2.5rem;
         }
@@ -1242,7 +1130,11 @@
               >
             </h1>
             <div class="hero-actions">
-              <a href="#contato" class="btn btn-primary">
+              <a
+                href="https://wa.me/5548996936310?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20procedimento"
+                target="_blank"
+                class="btn btn-primary"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -1269,19 +1161,6 @@
               </a>
             </div>
           </div>
-
-          <div class="hero-visual">
-            <div class="hero-card-main">
-              <div class="hero-img-placeholder">
-                <img
-                  src="drjulio1.png"
-                  alt="Dr. Julio Cechinel Filho"
-                  class="hero-img"
-                />
-              </div>
-            </div>
-            <div class="hero-line"></div>
-          </div>
         </div>
       </div>
     </section>
@@ -1303,7 +1182,7 @@
             <div class="servico-card">
               <span class="servico-num">01</span>
               <div class="servico-icon">
-                <img src="logo-branco.png" alt="logo-icon" />
+                <img src="obesita.png" alt="logo-icon" />
               </div>
               <h3 class="servico-h3">Por que fazer a bariátrica</h3>
               <p class="servico-p">
@@ -1320,7 +1199,7 @@
             <div class="servico-card">
               <span class="servico-num">02</span>
               <div class="servico-icon">
-                <img src="logo-branco.png" alt="logo-icon" />
+                <img src="obesita.png" alt="logo-icon" />
               </div>
               <h3 class="servico-h3">Como é a jornada com a Obesitá</h3>
               <p class="servico-p">
@@ -1339,7 +1218,7 @@
             <div class="servico-card">
               <span class="servico-num">03</span>
               <div class="servico-icon">
-                <img src="logo-branco.png" alt="logo-icon" />
+                <img src="obesita.png" alt="logo-icon" />
               </div>
               <h3 class="servico-h3">Emagrecimento saudável e duradouro</h3>
               <p class="servico-p">
@@ -1363,7 +1242,11 @@
           </div>
         </div>
         <div class="hero-actions">
-          <a href="#contato" class="btn btn-primary">
+          <a
+            href="https://wa.me/5548996936310?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20procedimento"
+            target="_blank"
+            class="btn btn-primary"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -1396,20 +1279,14 @@
     <section id="sobre" class="section-dark-image">
       <div class="container">
         <div class="sobre-grid">
-          <!-- <div class="sobre-img-wrap">
-            <div class="hero-img-placeholder">
-              <img src="drjulio.png" alt="Dr. Julio" class="hero-img" />
-            </div>
-          </div> -->
-
           <div class="sobre-text">
             <h2 class="section-title">Sobre o <em>Dr. Julio Cechinel</em></h2>
             <p>
               Olá, sou Dr. Julio, posso te ajudar em diversas situações pois
               tenho 4 especialidades: Cirurgião Geral, Aparelho Digestivo,
-              Bariátrico e Videolaparoscópico; Membro titular da SBCBM e do
-              Colégio Brasileiro de Cirurgiões; conduz as abordagens mais atuais
-              com resultados sólidos.
+              Bariátrico e Videolaparoscópico. Membro titular da SBCBM e do
+              Colégio Brasileiro de Cirurgiões; conduzo as abordagens mais
+              atuais e com resultados sólidos.
             </p>
 
             <div class="sobre-diferenciais">
@@ -1429,7 +1306,7 @@
                   </svg>
                 </div>
                 <div class="dif-text">
-                  Equipe especializada e multiprofissional
+                  Equipe especializada e multiprofissional para acompanhar você
                 </div>
               </div>
               <div class="diferencial-item">
@@ -1493,11 +1370,17 @@
                     <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" />
                   </svg>
                 </div>
-                <div class="dif-text">Protocolos modernos e seguros</div>
+                <div class="dif-text">
+                  Protocolos modernos, seguros e abordagens atuais
+                </div>
               </div>
             </div>
             <div class="hero-actions">
-              <a href="#contato" class="btn btn-primary">
+              <a
+                href="https://wa.me/5548996936310?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20procedimento"
+                target="_blank"
+                class="btn btn-primary"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -1529,71 +1412,927 @@
     </section>
 
     <!-- ══════════ DEPOIMENTOS ══════════ -->
-    <section id="depoimentos" class="section-dark">
+    <section id="depoimentos" class="section">
       <div class="container">
         <div class="depo-header">
           <h2 class="section-title">O que nossos <em>pacientes dizem</em></h2>
         </div>
+      </div>
 
-        <div class="depo-grid">
-          <div class="depo-card">
-            <div class="depo-stars">
-              <span>★</span><span>★</span><span>★</span><span>★</span
-              ><span>★</span>
-            </div>
-            <div class="depo-quote-icon">"</div>
-            <p class="depo-text">
-              Fiz a bariátrica com o Dr. Julio e perdi 42kg em 10 meses. O
-              acompanhamento pós-cirúrgico foi excepcional. Me sinto uma pessoa
-              completamente diferente.
-            </p>
-            <div class="depo-author">
-              <div class="depo-avatar">MC</div>
-              <div>
-                <div class="depo-name">Maria C.</div>
-                <div class="depo-info">Paciente bariátrica · Criciúma</div>
+      <div class="depo-carousel-wrap">
+        <!-- Linha 1: desloca para a direita -->
+        <div class="depo-track-row">
+          <div class="depo-track">
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Meu herói não usa capa, ele usa Jaleco. Muito feliz e satisfeita
+                por ter feito minha Bari com o doutor Júlio. Fiz a minha
+                cirurgia bem tranquila porque tenho muita confiança no Doutor
+                Júlio, ele e um excelente cirurgião. A equipe muito atenciosa, a
+                Magda, querida. Estou tão satisfeita, que meu marido também vai
+                fazer Bariátrica com o Doutor Júlio. Muito obrigada!
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">MK</div>
+                <div><div class="depo-name">Minéia Kalbusch</div></div>
               </div>
             </div>
-          </div>
-
-          <div class="depo-card">
-            <div class="depo-stars">
-              <span>★</span><span>★</span><span>★</span><span>★</span
-              ><span>★</span>
-            </div>
-            <div class="depo-quote-icon">"</div>
-            <p class="depo-text">
-              Optei pelo emagrecimento sem cirurgia e em 6 meses perdi 18kg. O
-              Dr. Julio sempre me explicou cada etapa com paciência e clareza.
-              Recomendo muito.
-            </p>
-            <div class="depo-author">
-              <div class="depo-avatar">RS</div>
-              <div>
-                <div class="depo-name">Roberto S.</div>
-                <div class="depo-info">
-                  Emagrecimento sem cirurgia · Araranguá
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Dr Júlio e sua equipe são top! Explicam tudo nos mínimos
+                detalhes nos deixando bem tranquilos. Pra quem tem algum receio,
+                é só fazer o que eles recomendam que vai ser sucesso. Super
+                recomendo, atendimento humanizado, equipe show que “fala a nossa
+                lingua”. Meu muito obrigado equipe Obesitá!
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">GS</div>
+                <div>
+                  <div class="depo-name">Giovani de Brida dos Santos</div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="depo-card">
-            <div class="depo-stars">
-              <span>★</span><span>★</span><span>★</span><span>★</span
-              ><span>★</span>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Hoje faz 11 dias de bariátrica e estou muito bem! Quero
+                agradecer pela atenção e cuidado que recebi desde a primeira
+                consulta com o Dr Julio. Já foram 13 kg a menos. No hospital fui
+                muito bem recebida desde a entrada até a minha alta. GRATIDÃO!
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">LD</div>
+                <div><div class="depo-name">Luciana Payerl Debiazi</div></div>
+              </div>
             </div>
-            <div class="depo-quote-icon">"</div>
-            <p class="depo-text">
-              Fiz a cirurgia de vesícula e fiquei impressionada com o cuidado da
-              equipe. Rápida recuperação e atenção constante antes e depois do
-              procedimento.
-            </p>
-            <div class="depo-author">
-              <div class="depo-avatar">AL</div>
-              <div>
-                <div class="depo-name">Ana L.</div>
-                <div class="depo-info">Cirurgia geral · Meleiro</div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                A equipe Obesitá é simplesmente excelente, quanto cuidado,
+                carinho, amor, empenho, dedicação e entre muitas outras
+                qualidades. Quanto orgulho poder dizer que eu sou mais uma
+                dessas inúmeras pessoas que esse grupo ajudou e ajuda a mudar de
+                vida ❤️🥹 Parabéns Equipe Obesitá 👏🏻👏🏻👏🏻👏🏻 Desejo a todos vocês
+                muito sucesso 🙏🏼🦋 …
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">MI</div>
+                <div><div class="depo-name">Maiara Isidoro</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                A clínica e a equipe foi muito bem recomendada por pessoas
+                conhecidas que já passaram por lá, e ter os feedbacks positivos
+                fez muita diferença na hora da escolha. Desde o primeiro
+                atendimento até o pós operatório só tenho elogios e gratidão
+                pela mudança positiva que aconteceu na minha vida! Recomendo de
+                olhos fechados! Nossa saúde física e mental é tudo e com certeza
+                a bari que fiz contribui muito pra isso! Um grande abraço a toda
+                equipe! Que Deus continue abençoando e guiando o trabalho de vcs
+                para que possam continuar transformando vidas! 🙏🏻😍😘
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">DL</div>
+                <div><div class="depo-name">Daiani Lessa</div></div>
+              </div>
+            </div>
+            <!-- duplicatas para loop infinito -->
+
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Meu herói não usa capa, ele usa Jaleco. Muito feliz e satisfeita
+                por ter feito minha Bari com o doutor Júlio. Fiz a minha
+                cirurgia bem tranquila porque tenho muita confiança no Doutor
+                Júlio, ele e um excelente cirurgião. A equipe muito atenciosa, a
+                Magda, querida. Estou tão satisfeita, que meu marido também vai
+                fazer Bariátrica com o Doutor Júlio. Muito obrigada!
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">MK</div>
+                <div><div class="depo-name">Minéia Kalbusch</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Dr Júlio e sua equipe são top! Explicam tudo nos mínimos
+                detalhes nos deixando bem tranquilos. Pra quem tem algum receio,
+                é só fazer o que eles recomendam que vai ser sucesso. Super
+                recomendo, atendimento humanizado, equipe show que “fala a nossa
+                lingua”. Meu muito obrigado equipe Obesitá!
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">GS</div>
+                <div>
+                  <div class="depo-name">Giovani de Brida dos Santos</div>
+                </div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Hoje faz 11 dias de bariátrica e estou muito bem! Quero
+                agradecer pela atenção e cuidado que recebi desde a primeira
+                consulta com o Dr Julio. Já foram 13 kg a menos. No hospital fui
+                muito bem recebida desde a entrada até a minha alta. GRATIDÃO!
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">LD</div>
+                <div><div class="depo-name">Luciana Payerl Debiazi</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                A equipe Obesitá é simplesmente excelente, quanto cuidado,
+                carinho, amor, empenho, dedicação e entre muitas outras
+                qualidades. Quanto orgulho poder dizer que eu sou mais uma
+                dessas inúmeras pessoas que esse grupo ajudou e ajuda a mudar de
+                vida ❤️🥹 Parabéns Equipe Obesitá 👏🏻👏🏻👏🏻👏🏻 Desejo a todos vocês
+                muito sucesso 🙏🏼🦋 …
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">MI</div>
+                <div><div class="depo-name">Maiara Isidoro</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                A clínica e a equipe foi muito bem recomendada por pessoas
+                conhecidas que já passaram por lá, e ter os feedbacks positivos
+                fez muita diferença na hora da escolha. Desde o primeiro
+                atendimento até o pós operatório só tenho elogios e gratidão
+                pela mudança positiva que aconteceu na minha vida! Recomendo de
+                olhos fechados! Nossa saúde física e mental é tudo e com certeza
+                a bari que fiz contribui muito pra isso! Um grande abraço a toda
+                equipe! Que Deus continue abençoando e guiando o trabalho de vcs
+                para que possam continuar transformando vidas! 🙏🏻😍😘
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">DL</div>
+                <div><div class="depo-name">Daiani Lessa</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha 2: desloca para a esquerda -->
+        <div class="depo-track-row">
+          <div class="depo-track">
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Excelente atendimento,um ótimo lugar , todos da equipe nos
+                tratam muito bem , Dr Júlio Cezar um ótimo profissional e sua
+                equipe maravilhosa,Amei ter feito minha cirurgia com eles ❤️
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">PA</div>
+                <div><div class="depo-name">Paloma Assis</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Olá ,sou a paciente Zeli Beltrame Legnani ,residente na cidade
+                de Lauro Muller ,fui indicada por uma paciente também da cidade
+                para fazer a consulta com o Dr Júlio e sua equipe. Expresso meu
+                agradecimento ao Dr .Júlio e sua equipe ,estou me sentindo feliz
+                ,e acima de tudo muito bem , minha saúde a cada dia melhorando
+                .Fui muito bem atendida .Ótimos profissionais . Obrigada por
+                tudo
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">ZL</div>
+                <div><div class="depo-name">Zeli Beltrame Legnani</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                O melhor médico que eu já tive o prazer de conhecer e ser
+                atendida. Você consegue perceber que DR. Júlio faz tudo com
+                muito amor, uma equipe fenomenal. Desde o primeiro contato
+                procurou ele próprio responder as dúvidas e de uma forma muito
+                simples fácil de enteder onde me passou extrema confiança. Só
+                tenho a agradecer ao dr.Julio e toda a sua equipe por tudo que
+                fizeram e ainda fazem por mim. Super Recomendo sempre.
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">SS</div>
+                <div><div class="depo-name">Sabrina Santiago</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Dr Júlio é um médico excelente! Muito humano e sempre disposto a
+                esclarecer todas as nossas dúvidas. Ele nos passa confiança, e
+                me deixou tranquila durante todo o processo, tanto antes quanto
+                após a cirurgia. Equipe Obesitá toda de parabéns! Profissionais
+                nota mil! A gente se sente em casa desde o primeiro dia em que
+                entra na Clínica. Só tenho a agradecer! 🙏
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">DO</div>
+                <div><div class="depo-name">Daiany Oliveira</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Melhor equipe. Desde a primeira consulta me atenderam muito bem,
+                Dr Júlio é um querido amei a primeira consulta pois ele explicou
+                absolutamente tudo, tanto o lado ruim quanto o lado bom da
+                cirurgia bariátrica. Eu tinha muito medo de cirurgia mas
+                conversando com DrJulio me senti segura me passou confiança, ele
+                sabe muito bem o que está fazendo. Gratidão a toda equipe. 👏🏼👏🏼
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">JM</div>
+                <div><div class="depo-name">Julia Correa Modolon</div></div>
+              </div>
+            </div>
+            <!-- duplicatas para loop infinito -->
+
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Excelente atendimento,um ótimo lugar , todos da equipe nos
+                tratam muito bem , Dr Júlio Cezar um ótimo profissional e sua
+                equipe maravilhosa,Amei ter feito minha cirurgia com eles ❤️
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">PA</div>
+                <div><div class="depo-name">Paloma Assis</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Olá ,sou a paciente Zeli Beltrame Legnani ,residente na cidade
+                de Lauro Muller ,fui indicada por uma paciente também da cidade
+                para fazer a consulta com o Dr Júlio e sua equipe. Expresso meu
+                agradecimento ao Dr .Júlio e sua equipe ,estou me sentindo feliz
+                ,e acima de tudo muito bem , minha saúde a cada dia melhorando
+                .Fui muito bem atendida .Ótimos profissionais . Obrigada por
+                tudo
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">ZL</div>
+                <div><div class="depo-name">Zeli Beltrame Legnani</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                O melhor médico que eu já tive o prazer de conhecer e ser
+                atendida. Você consegue perceber que DR. Júlio faz tudo com
+                muito amor, uma equipe fenomenal. Desde o primeiro contato
+                procurou ele próprio responder as dúvidas e de uma forma muito
+                simples fácil de enteder onde me passou extrema confiança. Só
+                tenho a agradecer ao dr.Julio e toda a sua equipe por tudo que
+                fizeram e ainda fazem por mim. Super Recomendo sempre.
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">SS</div>
+                <div><div class="depo-name">Sabrina Santiago</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Dr Júlio é um médico excelente! Muito humano e sempre disposto a
+                esclarecer todas as nossas dúvidas. Ele nos passa confiança, e
+                me deixou tranquila durante todo o processo, tanto antes quanto
+                após a cirurgia. Equipe Obesitá toda de parabéns! Profissionais
+                nota mil! A gente se sente em casa desde o primeiro dia em que
+                entra na Clínica. Só tenho a agradecer! 🙏
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">DO</div>
+                <div><div class="depo-name">Daiany Oliveira</div></div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <div class="depo-stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <div class="depo-quote-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 512 512"
+                >
+                  <g>
+                    <path
+                      d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"
+                      fill="#fbbb00"
+                    />
+                    <path
+                      d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z"
+                      fill="#518ef8"
+                    />
+                    <path
+                      d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z"
+                      fill="#28b446"
+                    />
+                    <path
+                      d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z"
+                      fill="#f14336"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <p class="depo-text">
+                Melhor equipe. Desde a primeira consulta me atenderam muito bem,
+                Dr Júlio é um querido amei a primeira consulta pois ele explicou
+                absolutamente tudo, tanto o lado ruim quanto o lado bom da
+                cirurgia bariátrica. Eu tinha muito medo de cirurgia mas
+                conversando com DrJulio me senti segura me passou confiança, ele
+                sabe muito bem o que está fazendo. Gratidão a toda equipe. 👏🏼👏🏼
+              </p>
+              <div class="depo-author">
+                <div class="depo-avatar">JM</div>
+                <div><div class="depo-name">Julia Correa Modolon</div></div>
               </div>
             </div>
           </div>
@@ -1601,36 +2340,167 @@
       </div>
     </section>
 
-    <!-- ══════════ FAQ ══════════ -->
-    <section id="faq" class="section">
+    <!-- ══════════ CONTATO + MAPA ══════════ -->
+    <section id="contato" class="section-dark">
       <div class="container">
-        <div class="faq-grid">
+        <div class="contato-grid">
           <div class="faq-left">
-            <h2 class="section-title">Preparado para <em>mudar de vida</em></h2>
-            <p>Entre em contato agora e agende sua consulta.</p>
-            <div class="faq-cta-box">
-              <h4>Entre em contato direto pelo WhatsApp.</h4>
-              <a
-                href="https://wa.me/5548999999999"
-                class="btn btn-primary"
-                target="_blank"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-whatsapp"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
-                  /></svg
-                >Falar pelo WhatsApp
-              </a>
+            <h2 class="section-title">Formas de<em> pagamento</em></h2>
+            <div class="info-items">
+              <div class="info-item">
+                <div class="info-icon-wrap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-barcode-icon lucide-barcode"
+                  >
+                    <path d="M3 5v14" />
+                    <path d="M8 5v14" />
+                    <path d="M12 5v14" />
+                    <path d="M17 5v14" />
+                    <path d="M21 5v14" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-val">Boleto Bancário</div>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon-wrap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="#ffffff"
+                      fill-rule="evenodd"
+                      d="M19.777 8.738c.361.361.693.693.948.994c.275.323.546.706.705 1.194a3.47 3.47 0 0 1 0 2.147c-.159.489-.43.872-.705 1.195c-.255.3-.587.633-.948.994l-4.515 4.515a18 18 0 0 1-.994.948c-.323.275-.707.546-1.195.705a3.48 3.48 0 0 1-2.147 0c-.488-.159-.87-.43-1.195-.705c-.3-.255-.632-.587-.993-.948l-4.515-4.515a18 18 0 0 1-.948-.994c-.275-.323-.546-.706-.705-1.195a3.47 3.47 0 0 1 0-2.147c.159-.488.43-.87.705-1.194c.254-.3.586-.633.948-.994l4.515-4.515c.361-.361.693-.693.993-.948c.324-.275.707-.546 1.195-.705a3.47 3.47 0 0 1 2.147 0c.489.159.872.43 1.195.705c.3.255.632.586.994.948zm-2.343-.237l1.253 1.253c.787.786 1.18 1.18 1.327 1.633c.13.398.13.828 0 1.226c-.147.454-.54.847-1.327 1.633l-1.253 1.253h-1.513a.8.8 0 0 1-.598-.28l-1.946-2.14a1.86 1.86 0 0 0-2.754 0l-1.947 2.14a.8.8 0 0 1-.597.28H6.565l-1.253-1.253c-.786-.786-1.179-1.18-1.326-1.633a2 2 0 0 1 0-1.226c.147-.454.54-.847 1.326-1.633l1.253-1.253H8.08c.209 0 .426.09.597.28l1.947 2.14a1.86 1.86 0 0 0 2.754 0l1.946-2.14a.8.8 0 0 1 .598-.28zm-1.489-1.489h-.024c-.652 0-1.262.286-1.7.767L12.276 9.92a.37.37 0 0 1-.55 0L9.778 7.78a2.3 2.3 0 0 0-1.7-.768h-.024l1.7-1.7c.786-.786 1.18-1.179 1.632-1.326c.4-.13.829-.13 1.227 0c.454.147.847.54 1.633 1.327zm-.024 9.976h.024l-1.7 1.7c-.785.786-1.178 1.179-1.632 1.326c-.398.13-.828.13-1.227 0c-.453-.147-.846-.54-1.632-1.327l-1.7-1.7h.025c.652 0 1.261-.285 1.699-.766l1.947-2.141a.37.37 0 0 1 .55 0l1.947 2.14a2.3 2.3 0 0 0 1.7.768"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-val">PIX/Dinheiro</div>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon-wrap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-credit-card-icon lucide-credit-card"
+                  >
+                    <rect width="20" height="14" x="2" y="5" rx="2" />
+                    <line x1="2" x2="22" y1="10" y2="10" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-val">Cartão de Crédito/Débito</div>
+                </div>
+              </div>
             </div>
           </div>
 
+          <div class="contato-info">
+            <h2 class="section-title">Entre em <em>contato</em></h2>
+
+            <div class="info-items">
+              <a
+                href="https://wa.me/5548996936310?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20procedimento"
+                target="_blank"
+                class="info-item"
+              >
+                <div class="info-icon-wrap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-whatsapp"
+                    viewBox="0 0 18 18"
+                  >
+                    <path
+                      d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-label">WhatsApp</div>
+                  <div class="info-val">(48) 9 9693-6310</div>
+                </div>
+              </a>
+              <a
+                href="https://www.instagram.com/drjuliocechinelfilho/"
+                target="_blank"
+                class="info-item"
+              >
+                <div class="info-icon-wrap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-instagram"
+                    viewBox="0 0 18 18"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-label">Instagram</div>
+                  <div class="info-val">@drjuliocechinelfilho</div>
+                </div>
+              </a>
+              <div class="info-item">
+                <div class="info-icon-wrap">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="currentColor"
+                    class="bi bi-clock"
+                    viewBox="0 0 18 18"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    />
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="info-label">Horário de atendimento</div>
+                  <div class="info-val">Segunda a Quinta</div>
+                  <div class="info-detail">08h às 18h</div>
+                  <div class="info-val">Sexta-feira</div>
+                  <div class="info-detail">08h às 17h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mapa-wrap">
           <div class="faq-list">
             <div class="faq-item">
               <div class="faq-q">
@@ -1694,159 +2564,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════ CONTATO + MAPA ══════════ -->
-    <section id="contato" class="section-dark">
-      <div class="container">
-        <div class="contato-grid">
-          <div class="form-wrap">
-            <h2 class="section-title">Dê o <em>primeiro passo</em></h2>
-
-            <div class="form-card">
-              <form id="contactForm" action="form.php" method="POST" novalidate>
-                <div class="form-row">
-                  <div class="form-group">
-                    <label for="nome">Nome completo *</label>
-                    <input
-                      type="text"
-                      id="nome"
-                      name="nome"
-                      placeholder="Seu nome"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="whatsapp">WhatsApp *</label>
-                    <input
-                      type="tel"
-                      id="whatsapp"
-                      name="whatsapp"
-                      placeholder="(00) 00000-0000"
-                      required
-                      maxlength="15"
-                    />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="email">E-mail</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary">
-                  Quero saber mais
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </form>
-
-              <div class="form-success" id="formSuccess">
-                <div class="check-wrap">✓</div>
-                <h3>Solicitação recebida!</h3>
-                <p>
-                  Entraremos em contato via WhatsApp em até 24 horas para
-                  confirmar seu agendamento.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="contato-info">
-            <h2 class="section-title">Entre em <em>contato</em></h2>
-
-            <div class="info-items">
-              <a
-                href="https://wa.me/5548999999999"
-                target="_blank"
-                class="info-item"
-              >
-                <div class="info-icon-wrap">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="currentColor"
-                    class="bi bi-whatsapp"
-                    viewBox="0 0 18 18"
-                  >
-                    <path
-                      d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div class="info-label">WhatsApp</div>
-                  <div class="info-val">(48) 9 9999-9999</div>
-                </div>
-              </a>
-              <a
-                href="https://www.instagram.com/drjuliocechinelfilho/"
-                target="_blank"
-                class="info-item"
-              >
-                <div class="info-icon-wrap">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="currentColor"
-                    class="bi bi-instagram"
-                    viewBox="0 0 18 18"
-                  >
-                    <path
-                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div class="info-label">Instagram</div>
-                  <div class="info-val">@drjuliocechinelfilho</div>
-                </div>
-              </a>
-              <div class="info-item">
-                <div class="info-icon-wrap">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="currentColor"
-                    class="bi bi-clock"
-                    viewBox="0 0 18 18"
-                  >
-                    <path
-                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
-                    />
-                    <path
-                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <div class="info-label">Horário de atendimento</div>
-                  <div class="info-val">Segunda a Quinta</div>
-                  <div class="info-detail">08h às 18h</div>
-                  <div class="info-val">Sexta-feira</div>
-                  <div class="info-detail">08h às 17h</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mapa-wrap">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.472727786772!2d-49.3642629!3d-28.675502400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df19798319a26f%3A0xdb804ad55362cdd6!2zT2Jlc2l0w6E!5e0!3m2!1spt-BR!2sbr!4v1779801118552!5m2!1spt-BR!2sbr"
             width="600"
@@ -2058,57 +2775,6 @@
 
     <script>
       document.getElementById("ano").textContent = new Date().getFullYear();
-
-      // Máscara WhatsApp
-      document
-        .getElementById("whatsapp")
-        .addEventListener("input", function (e) {
-          let v = e.target.value.replace(/\D/g, "").slice(0, 11);
-          if (v.length >= 7)
-            v = "(" + v.slice(0, 2) + ") " + v.slice(2, 7) + "-" + v.slice(7);
-          else if (v.length >= 3) v = "(" + v.slice(0, 2) + ") " + v.slice(2);
-          else if (v.length >= 1) v = "(" + v;
-          e.target.value = v;
-        });
-
-      // Submit AJAX
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-          const btn = this.querySelector('button[type="submit"]');
-          const req = this.querySelectorAll("[required]");
-          let valid = true;
-          req.forEach((f) => {
-            f.style.borderColor = "";
-            if (!f.value.trim()) {
-              f.style.borderColor = "#e05252";
-              valid = false;
-            }
-          });
-          if (!valid) return;
-          btn.disabled = true;
-          btn.textContent = "Enviando...";
-          try {
-            const res = await fetch("form.php", {
-              method: "POST",
-              body: new FormData(this),
-            });
-            const json = await res.json();
-            if (json.success) {
-              this.style.display = "none";
-              document.getElementById("formSuccess").style.display = "block";
-            } else {
-              btn.disabled = false;
-              btn.textContent = "Solicitar agendamento";
-              alert(json.message || "Erro ao enviar. Tente novamente.");
-            }
-          } catch {
-            btn.disabled = false;
-            btn.textContent = "Solicitar agendamento";
-            alert("Erro de conexão. Tente novamente.");
-          }
-        });
 
       // FAQ
       document.querySelectorAll(".faq-q").forEach((q) => {
